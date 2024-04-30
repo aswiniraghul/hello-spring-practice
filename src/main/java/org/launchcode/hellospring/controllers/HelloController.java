@@ -32,12 +32,12 @@ public class HelloController {
     public String helloWithQueryParam(@RequestParam String name) {
         return "Hello, " + name + "!";
     }
-//    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-//    public String helloWithQueryParam(@RequestParam String name, Model model) {
-//        String greeting = "Hello, " + name + "!";
-//        model.addText("greeting");
-//        return "hello";
-//    }
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
+    public String helloWithQueryParam(@RequestParam String name, Model model) {
+        String greeting = "Hello, " + name + "!";
+        model.addText("greeting");
+        return "hello";
+    }
 
 
     //handle requests of the form http://localhost:8080/hello/LaunchCode
@@ -48,17 +48,17 @@ public class HelloController {
 
 
    // handles requests for http://localhost:8080/hello/form
-//    @GetMapping("form")
-//    public String helloForm() {
-//        return "<html>" +
-//                "<body>" +
-//                "<form action = '/hello' method = 'post'>" + // submit a request to /hello
-//                "<input type = 'text' name = 'name' >" +
-//                "<input type = 'submit' value = 'Greet Me!' >" +
-//                "</form>" +
-//                "</body>" +
-//                "</html>";
-//    }
+    @GetMapping("form")
+    public String helloForm() {
+        return "<html>" +
+                "<body>" +
+                "<form action = '/hello' method = 'post'>" + // submit a request to /hello
+                "<input type = 'text' name = 'name' >" +
+                "<input type = 'submit' value = 'Greet Me!' >" +
+                "</form>" +
+                "</body>" +
+                "</html>";
+    }
 
     //Comments
     @RequestMapping(value = "hello", method = RequestMethod.POST)
